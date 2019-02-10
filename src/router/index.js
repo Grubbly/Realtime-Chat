@@ -16,7 +16,15 @@ export default new Router({
       path: '/chat',
       name: 'Chat',
       component: Chat,
-      props: true
+      props: true,
+      beforeEnter: (to, from, next) => {
+        // If a name exists, go to the chat
+        if(to.params.name) {
+          next()
+        } else { // If it doesn't exist, make the next page they visit the Welcome page.
+          next({name: 'Welcome'})
+        }
+      }
     }
   ]
 })
