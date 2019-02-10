@@ -1,4 +1,4 @@
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 import firestore from 'firebase/firestore'
 
 var config = {
@@ -11,6 +11,5 @@ var config = {
   };
 
 const firebaseApp = firebase.initializeApp(config);
-firebaseApp.firestore().settings({ timestampsInSnapshots: true })
 
 export default firebaseApp.firestore()

@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import db from '@/firebase/init'
+
 export default {
     name: 'NewMessage',
     props: ['name'],
@@ -22,7 +24,15 @@ export default {
         addMessage() {
             // If the user has typed a message...
             if(this.newMessage) {
-                
+                // This is asynchronous - it takes time to do
+                // It returns a promise which we use with .then
+                db.collection('messages').add({
+                    content: this.newMessage,
+                    name: this.name,
+                    timestamp: Date.now()
+                }).catch(err => {
+                    console.log(err)
+                })
             } else {
                 this.feedback = "Message cannot be blank!"
             }
