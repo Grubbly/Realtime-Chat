@@ -34,7 +34,7 @@ export default {
     name: 'Chat',
     data() {
         return {
-
+            messages: []
         }
     },
     props: ['name'],
@@ -48,7 +48,17 @@ export default {
         // Every CUD operation on the database calls this function
         // docChanges() returns a snapshot of the whole database
         reference.onSnapshot(snapshot => {
-            console.log(snapshot.docChanges())
+            snapshot.docChanges().forEach(change => {
+                if(change.type == 'added') {
+                    let doc = change.doc
+                    this.messages.push({
+                        id: doc.id,
+                        name: doc.data().name,
+                        content: doc.data().content,
+                        timestamp: doc.data().timestamp
+                    })
+                }
+            });
         })
     }
 }
