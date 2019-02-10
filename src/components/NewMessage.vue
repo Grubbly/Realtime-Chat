@@ -33,6 +33,10 @@ export default {
                 }).catch(err => {
                     console.log(err)
                 })
+
+                // Clear the input field
+                this.newMessage = null
+                this.feedback = null
             } else {
                 this.feedback = "Message cannot be blank!"
             }
