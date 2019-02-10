@@ -1,5 +1,5 @@
 <template>
-    <div class="new-message">
+    <div class="new-message left-align">
         <form @submit.prevent="addMessage">
             <label for="new-message">New Message (enter to send):</label>
             <input type="text" name="new-message" v-model="newMessage">

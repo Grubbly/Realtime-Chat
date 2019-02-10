@@ -1,11 +1,11 @@
 <template>
     <div class="chat container">
         <!-- this.name is the prop not the attribute in default -->
-        <h2 class="center cyan-text">Chatting as {{this.name}}</h2>
+        <h2 class="cyan-text center">Chatting as {{this.name}}</h2>
         <div class="card">
             
             <!-- Sender Data -->
-            <div class="card-content">
+            <div class="card-content left-align">
                 <!-- Messages are stored in an unordered list -->
                 <!-- Each message is a list item -->
                 <ul class="messages">
