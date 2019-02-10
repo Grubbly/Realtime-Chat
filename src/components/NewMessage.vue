@@ -3,6 +3,7 @@
         <form @submit.prevent="addMessage">
             <label for="new-message">New Message (enter to send):</label>
             <input type="text" name="new-message" v-model="newMessage">
+            <p v-if="feedback" class="red-text"> {{feedback}} </p>
         </form>
     </div>
 </template>
@@ -13,12 +14,18 @@ export default {
     props: ['name'],
     data() {
         return {
-            newMessage: null
+            newMessage: null,
+            feedback: null,
         }
     },
     methods: {
         addMessage() {
-            console.log(this.newMessage, this.name, Date.now())
+            // If the user has typed a message...
+            if(this.newMessage) {
+                
+            } else {
+                this.feedback = "Message cannot be blank!"
+            }
         }
     }
 }
