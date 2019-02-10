@@ -19,7 +19,7 @@
 
             <!-- New Message -->
             <div class="card-action">
-                <input type="text">
+                <NewMessage :name="name"/>
             </div>
 
         </div>
@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import NewMessage from '@/components/NewMessage'
+
 export default {
     name: 'Chat',
     data() {
@@ -35,6 +37,9 @@ export default {
         }
     },
     props: ['name'],
+    components: {
+        NewMessage,
+    },
 }
 </script>
 
