@@ -80,6 +80,23 @@ export default {
     display: block;
     font-size: 1em;
 }
+
+.messages{
+    /* Scrollbar */
+    max-height: 300px;
+    overflow: auto;
+}
+
+.messages::-webkit-scrollbar {
+    width: 3px;
+}
+
+.message::-webkit-scrollbar-track {
+    background: #ddd;
+}
+
+.message::-webkit-scrollbar-thumb {
+    background: #aaa;
+}
+
 </style>
-
-
