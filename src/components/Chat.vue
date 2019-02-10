@@ -42,7 +42,7 @@ export default {
         NewMessage,
     },
     created() {
-        let reference = db.collection('messages')
+        let reference = db.collection('messages').orderBy('timestamp')
 
         // Listen for changes in the messages collection
         // Every CUD operation on the database calls this function
