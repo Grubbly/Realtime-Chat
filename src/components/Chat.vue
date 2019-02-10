@@ -8,7 +8,7 @@
             <div class="card-content left-align">
                 <!-- Messages are stored in an unordered list -->
                 <!-- Each message is a list item -->
-                <ul class="messages">
+                <ul class="messages" v-chat-scroll>
                     <li v-for="message in messages" :key="message.id">
                         <span class="green-text">{{message.name}}</span> 
                         <span class="grey-text text-darken-3">{{message.content}}</span>
