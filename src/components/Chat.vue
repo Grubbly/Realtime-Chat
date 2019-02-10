@@ -9,10 +9,10 @@
                 <!-- Messages are stored in an unordered list -->
                 <!-- Each message is a list item -->
                 <ul class="messages">
-                    <li>
-                        <span class="green-text">Name</span> 
-                        <span class="grey-text text-darken-3">Message</span>
-                        <span class="grey-text time">Time</span>
+                    <li v-for="message in messages" :key="message.id">
+                        <span class="green-text">{{message.name}}</span> 
+                        <span class="grey-text text-darken-3">{{message.content}}</span>
+                        <span class="grey-text time">{{message.timestamp}}</span>
                     </li>
                 </ul>
             </div>
