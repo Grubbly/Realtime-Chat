@@ -3,6 +3,10 @@ import Router from 'vue-router'
 import Welcome from '@/components/Welcome'
 import Chat from '@/components/Chat'
 
+// Use Firestore and Hosting
+// enter enter dist yes
+
+
 Vue.use(Router)
 
 export default new Router({
