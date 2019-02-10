@@ -5,7 +5,8 @@ import Chat from '@/components/Chat'
 
 // Use Firestore and Hosting
 // enter enter dist yes
-
+// npm run build
+// firebase deploy
 
 Vue.use(Router)
 

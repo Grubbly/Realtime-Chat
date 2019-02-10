@@ -10,9 +10,11 @@
                 <!-- Each message is a list item -->
                 <ul class="messages" v-chat-scroll>
                     <li v-for="message in messages" :key="message.id">
-                        <span class="green-text">{{message.name}}</span> 
-                        <span class="grey-text text-darken-3">{{message.content}}</span>
-                        <span class="grey-text time">{{message.timestamp}}</span>
+                        <blockquote>
+                            <span class="green-text">{{message.name}}</span> 
+                            <span class="grey-text text-darken-3">{{message.content}}</span>
+                            <span class="grey-text time">{{message.timestamp}}</span>
+                        </blockquote>
                     </li>
                 </ul>
             </div>
