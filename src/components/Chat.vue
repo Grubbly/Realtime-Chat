@@ -28,6 +28,7 @@
 
 <script>
 import NewMessage from '@/components/NewMessage'
+import db from '@/firebase/init'
 
 export default {
     name: 'Chat',
@@ -40,6 +41,16 @@ export default {
     components: {
         NewMessage,
     },
+    created() {
+        let reference = db.collection('messages')
+
+        // Listen for changes in the messages collection
+        // Every CUD operation on the database calls this function
+        // docChanges() returns a snapshot of the whole database
+        reference.onSnapshot(snapshot => {
+            console.log(snapshot.docChanges())
+        })
+    }
 }
 </script>
 
